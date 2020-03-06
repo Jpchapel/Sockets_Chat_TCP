@@ -46,7 +46,7 @@ public class ServidorTCPMultiThread extends Thread{
             try {
                 mensaje = bufferedReader.readLine();
                 //mensaje = new String(mensaje.getBytes());
-                System.out.println("Cliente" +idCliente + ": " + mensaje);
+                System.out.println("Cliente " +idCliente + ": " + mensaje);
                 printWriter.println(mensaje);
             } catch (IOException ex) {
                 Logger.getLogger(ServidorTCPMultiThread.class.getName()).log(Level.SEVERE, null, ex);
