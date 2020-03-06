@@ -38,8 +38,10 @@ public class Conexion {
 
     public void ejecutar(int cantidadClientes) {
         System.out.println("Escuchando: " + serverSocket);
+        
         ServidorTCPMultiThread servidor;
         ExecutorService executor = Executors.newFixedThreadPool(cantidadClientes);
+        
         try {
             while (true) {
                 servidor = new ServidorTCPMultiThread(idCliente++, serverSocket.accept());
