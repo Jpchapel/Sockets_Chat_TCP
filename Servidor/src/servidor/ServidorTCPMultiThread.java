@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package servidor;
 
 import java.io.BufferedReader;
@@ -20,16 +19,17 @@ import java.util.logging.Logger;
  *
  * @author Joaquin Pereira Chapel
  */
-public class ServidorTCPMultiThread extends Thread{
+public class ServidorTCPMultiThread extends Thread {
+
     private Socket socket = null;
-    private BufferedReader bufferedReader = null;    
+    private BufferedReader bufferedReader = null;
     private PrintWriter printWriter = null;
     private int idCliente;
 
     public ServidorTCPMultiThread(int idCliente, Socket socket) {
         this.idCliente = idCliente;
         this.socket = socket;
-        
+
         try {
             bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
             printWriter = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), "UTF-8")));
@@ -41,11 +41,11 @@ public class ServidorTCPMultiThread extends Thread{
     @Override
     public void run() {
         String mensaje = new String();
-        
+
         do {
             try {
                 mensaje = bufferedReader.readLine();
-                System.out.println("Cliente " +idCliente + ": " + mensaje);
+                System.out.println("Cliente " + idCliente + ": " + mensaje);
                 printWriter.println(mensaje);
             } catch (IOException ex) {
                 Logger.getLogger(ServidorTCPMultiThread.class.getName()).log(Level.SEVERE, null, ex);
