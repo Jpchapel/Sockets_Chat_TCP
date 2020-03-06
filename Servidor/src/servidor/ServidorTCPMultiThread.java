@@ -21,10 +21,10 @@ import java.util.logging.Logger;
  * @author Joaquin Pereira Chapel
  */
 public class ServidorTCPMultiThread extends Thread{
-    Socket socket = null;
-    BufferedReader bufferedReader = null;    
-    PrintWriter printWriter = null;
-    int idCliente;
+    private Socket socket = null;
+    private BufferedReader bufferedReader = null;    
+    private PrintWriter printWriter = null;
+    private int idCliente;
 
     public ServidorTCPMultiThread(int idCliente, Socket socket) {
         this.idCliente = idCliente;

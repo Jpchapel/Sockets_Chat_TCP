@@ -20,11 +20,11 @@ import java.util.logging.Logger;
  */
 public class Conexion {
 
-    public static final int PUERTO = 5000;
+    private static final int PUERTO = 5000;
     private static final String HOST = "localhost";
-    ServerSocket serverSocket = null;
-    InetSocketAddress inetSocketAddress = null;
-    int idCliente = 0;
+    private ServerSocket serverSocket = null;
+    private InetSocketAddress inetSocketAddress = null;
+    private int idCliente = 0;
 
     public Conexion() {
         try {
