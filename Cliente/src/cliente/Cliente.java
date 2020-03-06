@@ -41,7 +41,7 @@ public class Cliente {
             socket.connect(address);
             
             bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            printWriter = new PrintWriter(socket.getOutputStream());
+            printWriter = new PrintWriter(socket.getOutputStream(), true);
             entradaTeclado = new BufferedReader(new InputStreamReader(System.in));
             
             String mensaje;
@@ -51,7 +51,6 @@ public class Cliente {
                 mensaje = entradaTeclado.readLine();
                 
                 printWriter.println(mensaje);
-                printWriter.flush();
                 
                 mensaje = bufferedReader.readLine();
                 System.out.println("Respuesta Servidor: " + mensaje);
