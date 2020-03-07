@@ -32,7 +32,7 @@ public class ServidorTCPMultiThread extends Thread {
 
         try {
             bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
-            printWriter = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), "UTF-8")));
+            printWriter = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), "UTF-8")), true);
         } catch (IOException ex) {
             Logger.getLogger(ServidorTCPMultiThread.class.getName()).log(Level.SEVERE, null, ex);
         }
