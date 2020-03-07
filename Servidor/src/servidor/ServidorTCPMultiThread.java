@@ -24,7 +24,7 @@ public class ServidorTCPMultiThread extends Thread {
     private Socket socket = null;
     private BufferedReader bufferedReader = null;
     private PrintWriter printWriter = null;
-    private int idCliente;
+    private final int idCliente;
 
     public ServidorTCPMultiThread(int idCliente, Socket socket) {
         this.idCliente = idCliente;
@@ -40,7 +40,7 @@ public class ServidorTCPMultiThread extends Thread {
 
     @Override
     public void run() {
-        String mensaje = new String();
+        String mensaje;
 
         do {
             try {
