@@ -15,7 +15,6 @@ public class Servidor {
     /**
      * @param args the command line arguments
      */
-    private static int PUERTO = 5000;
     
     public static void main(String[] args) {
         new Conexion().ejecutar(2);
